@@ -20,10 +20,10 @@ def main():
             print(f"New client connected: {addr}")
             with conn:
                 try:
-                    # 1) Send welcome message
+                    # Send welcome message
                     conn.sendall(WELCOME_MSG.encode("utf-8"))
 
-                    # 2) Send the text file (small file, simple send)
+                    # Send the text file 
                     with open(FILE_PATH, "rb") as f:
                         data = f.read()
                         conn.sendall(data)
@@ -33,4 +33,5 @@ def main():
                     print("Error:", e)
 
 if __name__ == "__main__":
+
     main()
