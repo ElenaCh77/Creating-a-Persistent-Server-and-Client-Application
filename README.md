@@ -1,47 +1,81 @@
-
 # Creating a Persistent Server and Client Application
 
-This project was created as an assignment to demonstrate socket programming in Python.
+## 🎯 Objective
+The goal of this assignment is to develop a client–server application using Python sockets.
 
-## Objective
-- The server continuously listens for incoming client connections.
-- Each time a client connects, the server displays a message in the terminal.
-- The server sends a welcome message and a text file to the client.
-- The client displays the welcome message in a popup window and saves the text file locally.
+- The **server** continuously listens for incoming client connections.
+- Each time a client connects:
+  - The server displays a message in the terminal.
+  - The server sends a **welcome message** and a **text file**.
+- The **client**:
+  - Connects to the server.
+  - Shows the welcome message in a **popup window**.
+  - Saves the received text file locally.
 
-## Files
-- **server.py** – Python server that listens on port 50007, sends a welcome message and a text file.
-- **client.py** – Python client that connects to the server, shows a popup with the welcome message, and saves the received text file as `received_message.txt`.
+---
 
-## How to Run
-1. Start the server:
-   ```bash
-   py server.py
+## 📂 Project Structure
 
+Creating-a-Persistent-Server-and-Client-Application/
+│── server.py # Server code
+│── client.py # Client code
+│── README.md # Instructions and documentation
 
-   Output:
+yaml
+Copy code
 
+> Note:  
+> - `message.txt` is created automatically by the server.  
+> - `received_message.txt` is created automatically by the client.  
+
+---
+
+## ⚙️ Requirements
+- Python 3 (from [python.org](https://www.python.org/downloads/))
+- Tkinter (comes included with Python on Windows/macOS)
+
+---
+
+## 🚀 How to Run
+
+### 1. Start the Server
+Open a terminal in the project folder and run:
+```bash
+py server.py
+Output example:
+
+nginx
+Copy code
 Server listening on 0.0.0.0:50007 ...
+New client connected: ('127.0.0.1', 54321)
+Sent file message.txt (30 bytes)
+2. Run the Client
+In another terminal (or another computer on the same network):
 
-
-2. Start the client (in a second terminal or on another computer):
-
+bash
+Copy code
 py client.py
+A popup window will appear with:
+“Connected to the server! Welcome.”
 
+The client saves the received file as received_message.txt.
 
-A popup window will show: “Connected to the server! Welcome.”
+3. View the Received File
+In PowerShell:
 
-The file will be saved as received_message.txt.
-
-3. View the file contents:
-
-PowerShell:
+powershell
+Copy code
 cat .\received_message.txt
+In Command Prompt:
 
-
-Command Prompt:
+cmd
+Copy code
 type received_message.txt
+Output:
 
+csharp
+Copy code
+There is a pop quiz coming soon
 
 Output:
 
